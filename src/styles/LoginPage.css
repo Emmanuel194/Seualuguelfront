@@ -1,0 +1,125 @@
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #0066cc; /* Cor de fundo azul */
+}
+
+.login-box {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.9
+  ); /* Fundo branco semi-transparente */
+  padding: 30px; /* Adicionando espaçamento interno */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.login-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+}
+
+.login-form {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-input-group {
+  margin-bottom: 15px;
+}
+
+.login-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.login-button {
+  width: 100%; /* Ajuste para a mesma largura dos inputs */
+  padding: 10px 15px;
+  background-color: #0066cc;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.login-links {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.login-links .link-button {
+  background: none;
+  border: none;
+  color: #0066cc;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.reset-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.reset-popup-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 300px;
+}
+
+.reset-input-group {
+  margin-bottom: 15px;
+}
+
+.reset-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.reset-button-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.reset-button {
+  width: 48%;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.reset-button.submit-button {
+  background-color: #0066cc;
+  color: white;
+}
+
+.reset-button.cancel-button {
+  background-color: #ccc;
+  color: #333;
+}

@@ -1,0 +1,91 @@
+.register-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #0066cc; /* Cor de fundo azul */
+}
+
+.register-box {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.9
+  ); /* Fundo branco semi-transparente */
+  padding: 30px; /* Adicionando espaçamento interno */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.register-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+}
+
+.register-form {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.register-input-group {
+  margin-bottom: 15px;
+}
+
+.register-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.register-button-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.register-button,
+.cancel-button {
+  width: 48%;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.register-button {
+  background-color: #0066cc;
+  color: white;
+}
+
+.cancel-button {
+  background-color: #ccc;
+  color: #333;
+}
+
+/* Estilo do Popup */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
