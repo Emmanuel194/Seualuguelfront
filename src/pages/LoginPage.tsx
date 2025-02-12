@@ -1,18 +1,43 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import '../styles/LoginPage.css';
 
 const LoginPage: React.FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [rememberMe, setRememberMe] = useState(false);
   const [showResetPopup, setShowResetPopup] = useState(false);
   const [resetEmail, setResetEmail] = useState('');
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const storedEmail = localStorage.getItem('email');
+    const storedPassword = localStorage.getItem('password');
+    if (storedEmail && storedPassword) {
+      setEmail(storedEmail);
+      setPassword(storedPassword);
+      setRememberMe(true);
+    }
+  }, []);
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
       const response = await axios.post('/api/users/login', { email, password });
-      console.log(response.data);
+      if (response.status === 200) {
+        localStorage.setItem('token', response.data.token); 
+        if (rememberMe) {
+          localStorage.setItem('email', email);
+          localStorage.setItem('password', password);
+        } else {
+          localStorage.removeItem('email');
+          localStorage.removeItem('password');
+        }
+        navigate('/dashboard'); 
+      } else {
+        console.error('Erro ao fazer login');
+      }
     } catch (error) {
       console.error(error);
     }
@@ -55,6 +80,15 @@ const LoginPage: React.FC = () => {
               placeholder="Digite sua senha"
               required
             />
+          </div>
+          <div className="remember-me-group">
+            <input
+              type="checkbox"
+              checked={rememberMe}
+              onChange={(e) => setRememberMe(e.target.checked)}
+              id="rememberMe"
+            />
+            <label htmlFor="rememberMe">Lembrar-me</label>
           </div>
           <button type="submit" className="login-button">Login</button>
         </form>

@@ -44,8 +44,18 @@
   border: 1px solid #ccc;
 }
 
+.remember-me-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.remember-me-group input[type="checkbox"] {
+  margin-right: 0.5rem;
+}
+
 .login-button {
-  width: 100%; /* Ajuste para a mesma largura dos inputs */
+  width: 100%;
   padding: 10px 15px;
   background-color: #0066cc;
   color: white;
