@@ -1,17 +1,24 @@
 import React, { useState } from 'react';
-import './TenantForm.css';
+import { Tenant } from '../types'; 
+import '../styles/TenantForm.css';
 
-const TenantForm: React.FC = () => {
+type TenantFormProps = {
+  onSave: (tenant: Tenant) => void; 
+};
+
+const TenantForm: React.FC<TenantFormProps> = ({ onSave }) => {
   const [name, setName] = useState('');
   const [cpf, setCpf] = useState('');
-  const [dateOfBirth, setDateOfBirth] = useState('');
+  const [birthdate, setBirthdate] = useState('');
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
-    console.log({ name, cpf, dateOfBirth, phone, email });
+
+    const newTenant: Tenant = { name, cpf, birthdate, phone, email };
+
+    onSave(newTenant); // Enviando os dados para o DashboardPage
   };
 
   return (
@@ -40,8 +47,8 @@ const TenantForm: React.FC = () => {
           <label>Data de Nascimento</label>
           <input
             type="date"
-            value={dateOfBirth}
-            onChange={(e) => setDateOfBirth(e.target.value)}
+            value={birthdate}
+            onChange={(e) => setBirthdate(e.target.value)}
             required
           />
         </div>
